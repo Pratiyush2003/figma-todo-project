@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
-import addicon from '../csv and images/addicon.svg'
+import { useState } from "react";
 
 const TodoList = ({ todos }) => {
   
     const General = todos.filter((p) => p.category == "General")
+    const [toggle , setToggle] = useState(false);
     
   return (
     <>
-      <div className="fixed bottom-6 right-6 bg-white rounded-full">
-        <img src={addicon} className="h-12" />
-      </div>
       <div>
         <ul className="flex flex-col mt-5 ">
           {General &&
@@ -17,12 +14,14 @@ const TodoList = ({ todos }) => {
               <li className="w-full h-16 flex item-center mt-4" key={p.id}>
                 <div className="w-1/5 text-center flex items-center justify-center">
                   <input
+                  value={toggle}
+                    onClick={() => setToggle(!toggle)}
                     type="checkbox"
                     className="appearance-none rounded-full w-8 h-8 border-2 border-gray-500 checked:bg-blue-500 checked:border-blue-500  self-center "
                   />
                 </div>
-                <div className="w-3/5   text-left flex items-center justify-center border-b-2 boder-gray-500">
-                  <p className="text-[18px] font-bold  mr-6">
+                <div className="w-3/5   text-left flex items-center border-b-2 boder-gray-500">
+                  <p className={`text-[18px] font-bold `}>
                     {p.todo}
                   </p>
                 </div>

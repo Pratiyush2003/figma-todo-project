@@ -12,7 +12,6 @@ const Handle = ({ colour, setColour, category, setcategory, Inbox, Family, Shopp
     setToggle(!toggle);
   };
 
-
   return (
     <>
       {toggle && (
@@ -23,7 +22,7 @@ const Handle = ({ colour, setColour, category, setcategory, Inbox, Family, Shopp
       )}
       <div
         className={`bg-[#61DEA4] fixed duration-300 bottom-0 ${colour[0].green ? "h-[90%]" : "h-[0%]"
-          }  w-full md:w-2/5 z-10`}
+          }  w-full md:w-full lg:w-3/5 xl:w-2/5 z-10`}
         style={{ borderRadius: "15px 15px 0px 0px" }}
         onClick={() => setcategory("Work")}
       >
@@ -56,7 +55,7 @@ const Handle = ({ colour, setColour, category, setcategory, Inbox, Family, Shopp
                     className="appearance-none rounded-full w-8 h-8 border-2 border-white checked:bg-blue-500 checked:border-blue-500  self-center "
                   />
                 </div>
-                <div className="w-[70%]  text-left flex items-center justify-center border-b-[1px] border-white">
+                <div className="w-[70%]  text-left flex items-center border-b-[1px] border-white">
                   <p className="text-[18px] font-bold  mr-6 text-white">
                     {p.todo}
                   </p>
@@ -94,21 +93,20 @@ const Handle = ({ colour, setColour, category, setcategory, Inbox, Family, Shopp
             </div>
           </div>
           <ul className="flex flex-col w-full ">
-            {Family.map((p) =>
-              <li className="w-full h-16 flex item-center justify-between mt-4" key={p.key}>
-                {console.log(p.id)}
+            {Family.map((p) =>(
+              <li className="w-full h-16 flex item-center justify-between mt-4" key={p.id}>
                 <div className="w-[30%] text-center flex items-center justify-center ">
                   <input
                     type="checkbox"
                     className="appearance-none rounded-full w-8 h-8 border-2 border-black checked:bg-blue-500 checked:border-blue-500  self-center "
                   />
                 </div>
-                <div className="w-[70%]  text-left flex items-center justify-center border-b-[1px] border-black">
+                <div className="w-[70%]  text-left flex items-center border-b-[1px] border-black">
                   <p className="text-[18px] font-bold  mr-6 text-black">
                     {p.todo}
                   </p>
                 </div>
-              </li>
+              </li>)
             )}
 
           </ul>
@@ -144,14 +142,13 @@ const Handle = ({ colour, setColour, category, setcategory, Inbox, Family, Shopp
           <ul className="flex flex-col w-full ">
             {Inbox.map((p) =>
               <li className="w-full h-16 flex item-center justify-between mt-4" key={p.id}>
-                {console.log(p.id)}
                 <div className="w-[30%] text-center flex items-center justify-center ">
                   <input
                     type="checkbox"
                     className="appearance-none rounded-full w-8 h-8 border-2 border-black checked:bg-blue-500 checked:border-blue-500  self-center "
                   />
                 </div>
-                <div className="w-[70%]  text-left flex items-center justify-center border-b-[1px] border-black">
+                <div className="w-[70%]  text-left flex items-center border-b-[1px] border-black">
                   <p className="text-[18px] font-bold  mr-6 text-black">
                     {p.todo}
                   </p>
@@ -197,7 +194,7 @@ const Handle = ({ colour, setColour, category, setcategory, Inbox, Family, Shopp
                     className="appearance-none rounded-full w-8 h-8 border-2 border-white checked:bg-blue-500 checked:border-blue-500  self-center "
                   />
                 </div>
-                <div className="w-[70%]  text-left flex items-center justify-center border-b-[1px] border-white">
+                <div className="w-[70%]  text-left flex items-center border-b-[1px] border-white">
                   <p className="text-[18px] font-bold  mr-6 text-white">
                     {p.todo}
                   </p>
@@ -240,14 +237,15 @@ const Handle = ({ colour, setColour, category, setcategory, Inbox, Family, Shopp
             </div>
           </div>
           <ul className="flex flex-col w-full ">
-            {Personal.map((p) => <li className="w-full h-16 flex item-center justify-between mt-4" key={p.id}>
+            {Personal.map((p) => 
+            <li className="w-full h-16 flex item-center justify-between mt-4" key={p.id}>
               <div className="w-[30%] text-center flex items-center justify-center ">
                 <input
                   type="checkbox"
                   className="appearance-none rounded-full w-8 h-8 border-2 border-white checked:bg-blue-500 checked:border-blue-500  self-center "
                 />
               </div>
-              <div className="w-[70%]  text-left flex items-center justify-center border-b-[1px] border-white">
+              <div className="w-[70%]  text-left flex items-center border-b-[1px] border-white">
                 <p className="text-[18px] font-bold  mr-6 text-white">
                   {p.todo}
                 </p>

@@ -27,7 +27,7 @@ const Main = () => {
   ]);
 
   return (
-    <div className="w-full md:w-5/5 lg:w-3/5 xl:w-2/5 h-screen">
+    <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 h-screen">
       <Header category={category} />
       <div className="p-4">
         <TodoList todos={todos} />

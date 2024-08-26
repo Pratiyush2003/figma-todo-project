@@ -1,11 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 const BottomBox = ({ colour, setColour , Inbox, Family, Shopping, Personal, Work }) => {
 
-  const { todos } = useSelector((state) => state.app);
-
-  
   const colorsList = [
     { name: "gray", bg: "#EBEFF5", textColor: "text-gray-500" , topic : "Inbox", category : Inbox.length },
     { name: "green", bg: "#61DEA4", textColor: "text-white", topic : "Work", category : Work.length },
@@ -14,10 +10,6 @@ const BottomBox = ({ colour, setColour , Inbox, Family, Shopping, Personal, Work
     { name: "purple", bg: "#B678FF", textColor: "text-white",topic : "Personal", category : Personal.length }
   ];
 
-
-
-  
-  
   return (
     <>
       <ul className="flex flex-col">
