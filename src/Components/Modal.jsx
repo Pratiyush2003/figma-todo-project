@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 
 const Modal = ({ onClose, category }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const { todos } = useSelector((state) => state.app);
   const [todo, setTodo] = useState("");
 
   const dispatch = useDispatch();

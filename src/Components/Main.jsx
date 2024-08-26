@@ -16,7 +16,7 @@ const Main = () => {
   }, [dispatch]);
 
   const { todos } = useSelector((state) => state.app);
-
+  
   const Inbox = todos.filter((p) => p.category == "Inbox");
   const Family = todos.filter((p) => p.category == "Family");
   const Shopping = todos.filter((p) => p.category == "Shopping");

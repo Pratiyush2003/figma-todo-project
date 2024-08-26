@@ -2,7 +2,9 @@ import React from "react";
 import "./App.css";
 import Main from "./Components/Main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import EditModal from "./Components/EditModal";
 import Modal from "./Components/Modal";
+
 
 const App = () => {
   return (
@@ -10,7 +12,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
-          {/* <Route path="/:id" element={<Modal />}/> */}
+          <Route path="/EditModal/:id" element={<EditModal />}/>
         </Routes>
       </BrowserRouter>
     </div>

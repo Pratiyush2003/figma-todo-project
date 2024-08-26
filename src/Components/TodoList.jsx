@@ -9,6 +9,7 @@ const TodoList = ({ todos, handleToggle, toggleStates }) => {
       <ul className="flex flex-col mt-5 p-2">
         {General &&
           General.map((p) => (
+            
             <li className="w-full h-16 flex item-center mt-4" key={p.id}>
               <div className="w-1/5 text-center flex items-center justify-center">
                 <input
@@ -18,9 +19,8 @@ const TodoList = ({ todos, handleToggle, toggleStates }) => {
                   className="appearance-none rounded-full w-8 h-8 border-2 border-gray-500 checked:bg-blue-500 checked:border-blue-500 self-center"
                 />
               </div>
-              
-              <div className="w-3/5 text-left flex items-center border-b-2 border-gray-500">
-    
+              <Link to={`/EditModal/${p.id}`} className="w-3/5 text-left flex items-center border-b-2 border-gray-500">
+              <div>
                 <p
                   className={`text-[18px] font-bold ${
                     toggleStates[p.id] ? "line-through" : ""
@@ -28,8 +28,8 @@ const TodoList = ({ todos, handleToggle, toggleStates }) => {
                 >
                   {p.todo}
                 </p>
-
               </div>
+              </Link>
               <div className="w-1/5 flex items-center justify-end border-b-2 border-gray-500">
                 <button className="rounded-full bg-green-500 h-4 w-4 mr-8 md:mx-12"></button>
               </div>
