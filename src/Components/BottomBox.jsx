@@ -12,13 +12,14 @@ const BottomBox = ({ colour, setColour , Inbox, Family, Shopping, Personal, Work
 
   return (
     <>
-      <ul className="flex flex-col">
+      <ul className="flex flex-col p-2">
         <div className="flex h-16 w-full">
-          <div className="w-1/5 text-center flex items-center justify-center"></div>
+          <div className="w-1/5 text-left flex items-center">
+          <div className={`text-[18px] font-bold text-gray-400`}>Lists</div>
+          </div>
           <div
-            className={`w-4/5 text-left flex flex-col rounded-lg pt-4 box-border `}
+            className={`w-4/5 flex flex-col rounded-lg pt-4 box-border `}
           >
-            <div className={`text-[18px] font-bold text-gray-400`}>Lists</div>
           </div>
         </div>
         {colorsList.map((colorObj, index) => (
@@ -28,9 +29,9 @@ const BottomBox = ({ colour, setColour , Inbox, Family, Shopping, Personal, Work
             className="cursor-pointer"
           >
             <div className="w-full h-17 flex item-center mt-2">
-              <div className="w-1/5 text-center flex items-center justify-center"></div>
+              
               <div
-                className={`w-4/5 text-left flex flex-col rounded-lg p-3 box-border bg-[${colorObj.bg}]`}
+                className={`w-full text-left flex flex-col rounded-lg p-3 box-border bg-[${colorObj.bg}]`}
               >
                 <div className={`text-[18px] font-bold ${colorObj.textColor}`}>
                   {colorObj.topic.charAt(0).toUpperCase() +

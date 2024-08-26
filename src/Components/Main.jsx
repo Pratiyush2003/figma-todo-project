@@ -14,6 +14,7 @@ const Main = () => {
   useEffect(() => {
     dispatch(gettodo());
   }, [dispatch]);
+
   const { todos } = useSelector((state) => state.app);
 
   const Inbox = todos.filter((p) => p.category == "Inbox");
@@ -26,11 +27,27 @@ const Main = () => {
     { red: false, green: false, yellow: false, purple: false, gray: false },
   ]);
 
+  const [toggleStates, setToggleStates] = useState(
+    todos.reduce((acc, todo) => ({ ...acc, [todo.id]: false }), {})
+  );
+
+  const handleToggle = (id) => {
+    setToggleStates((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
+
   return (
     <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 h-screen">
       <Header category={category} />
       <div className="p-4">
-        <TodoList todos={todos} />
+        <TodoList
+          todos={todos}
+          handleToggle={handleToggle}
+          toggleStates={toggleStates}
+          setToggleStates={setToggleStates}
+        />
         <BottomBox
           colour={colour}
           setColour={setColour}
@@ -52,6 +69,9 @@ const Main = () => {
         setColour={setColour}
         category={category}
         setcategory={setcategory}
+        handleToggle={handleToggle}
+        toggleStates={toggleStates}
+        setToggleStates={setToggleStates}
       />
     </div>
   );
