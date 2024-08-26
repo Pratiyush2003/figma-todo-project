@@ -3,6 +3,7 @@ import Topicon from "../csv and images/Topicon.svg";
 import Edit from "../csv and images/Edit.svg";
 import BlackEdit from "../csv and images/BlackEdit.svg";
 import Modal from "./Modal";
+import { Link } from "react-router-dom";
 
 const Handle = ({
   colour,
@@ -35,10 +36,9 @@ const Handle = ({
       )}
 
       <div
-       
-        className={`bg-[#61DEA4] fixed duration-300 bottom-0 ${
-          colour[0].green ? "h-[90%]" : "h-[0%]"
-        } w-full md:w-4/4 lg:w-3/5 xl:w-2/5`}
+
+        className={`bg-[#61DEA4] fixed duration-300 bottom-0 ${colour[0].green ? "h-[90%]" : "h-[0%]"
+          } w-full md:w-4/4 lg:w-3/5 xl:w-2/5`}
         style={{ borderRadius: "15px 15px 0px 0px" }}
         onClick={() => setcategory("Work")}
       >
@@ -76,15 +76,18 @@ const Handle = ({
                     onChange={() => handleToggle(p.id)}
                   />
                 </div>
+
                 <div className="w-[70%]  text-left flex items-center border-b-[1px] border-white">
-                  <p
-                    className={`text-[18px] font-bold ${
-                      toggleStates[p.id] ? "line-through" : ""
-                    }`}
-                  >
-                    {p.todo}
-                  </p>
+                  <Link to={`/EditModal/${p.id}`}>
+                    <p
+                      className={`text-[18px] font-bold ${toggleStates[p.id] ? "line-through" : ""
+                        }`}
+                    >
+                      {p.todo}
+                    </p>
+                  </Link>
                 </div>
+
               </li>
             ))}
           </ul>
@@ -92,9 +95,8 @@ const Handle = ({
       </div>
 
       <div
-        className={`bg-[#FFE761] fixed duration-300 bottom-0 ${
-          colour[0].yellow ? "h-[90%]" : "h-[0%]"
-        }  w-full md:w-4/4 lg:w-3/5 xl:w-2/5`}
+        className={`bg-[#FFE761] fixed duration-300 bottom-0 ${colour[0].yellow ? "h-[90%]" : "h-[0%]"
+          }  w-full md:w-4/4 lg:w-3/5 xl:w-2/5`}
         style={{ borderRadius: "15px 15px 0px 0px" }}
         onClick={() => setcategory("Family")}
       >
@@ -133,13 +135,14 @@ const Handle = ({
                   />
                 </div>
                 <div className="w-[70%]  text-left flex items-center border-b-[1px] border-white">
-                  <p
-                    className={`text-[18px] font-bold ${
-                      toggleStates[p.id] ? "line-through" : ""
-                    }`}
-                  >
-                    {p.todo}
-                  </p>
+                  <Link to={`/EditModal/${p.id}`}>
+                    <p
+                      className={`text-[18px] font-bold ${toggleStates[p.id] ? "line-through" : ""
+                        }`}
+                    >
+                      {p.todo}
+                    </p>
+                  </Link>
                 </div>
               </li>
             ))}
@@ -148,9 +151,8 @@ const Handle = ({
       </div>
 
       <div
-        className={`bg-[#EBEFF5] fixed duration-300 bottom-0 ${
-          colour[0].gray ? "h-[90%]" : "h-[0%]"
-        }  w-full md:w-4/4 lg:w-3/5 xl:w-2/5`}
+        className={`bg-[#EBEFF5] fixed duration-300 bottom-0 ${colour[0].gray ? "h-[90%]" : "h-[0%]"
+          }  w-full md:w-4/4 lg:w-3/5 xl:w-2/5`}
         style={{ borderRadius: "15px 15px 0px 0px" }}
         onClick={() => setcategory("Inbox")}
       >
@@ -189,13 +191,14 @@ const Handle = ({
                   />
                 </div>
                 <div className="w-[70%]  text-left flex items-center border-b-[1px] border-white">
-                  <p
-                    className={`text-[18px] font-bold ${
-                      toggleStates[p.id] ? "line-through" : ""
-                    }`}
-                  >
-                    {p.todo}
-                  </p>
+                  <Link to={`/EditModal/${p.id}`}>
+                    <p
+                      className={`text-[18px] font-bold ${toggleStates[p.id] ? "line-through" : ""
+                        }`}
+                    >
+                      {p.todo}
+                    </p>
+                  </Link>
                 </div>
               </li>
             ))}
@@ -204,9 +207,8 @@ const Handle = ({
       </div>
 
       <div
-        className={`bg-[#F45E6D] fixed duration-300 bottom-0 ${
-          colour[0].red ? "h-[90%]" : "h-[0%]"
-        }  w-full md:w-4/4 lg:w-3/5 xl:w-2/5`}
+        className={`bg-[#F45E6D] fixed duration-300 bottom-0 ${colour[0].red ? "h-[90%]" : "h-[0%]"
+          }  w-full md:w-4/4 lg:w-3/5 xl:w-2/5`}
         style={{ borderRadius: "15px 15px 0px 0px" }}
         onClick={() => setcategory("Shopping")}
       >
@@ -245,13 +247,14 @@ const Handle = ({
                   />
                 </div>
                 <div className="w-[70%]  text-left flex items-center border-b-[1px] border-white">
-                  <p
-                    className={`text-[18px] font-bold ${
-                      toggleStates[p.id] ? "line-through" : ""
-                    }`}
-                  >
-                    {p.todo}
-                  </p>
+                  <Link to={`/EditModal/${p.id}`}>
+                    <p
+                      className={`text-[18px] font-bold ${toggleStates[p.id] ? "line-through" : ""
+                        }`}
+                    >
+                      {p.todo}
+                    </p>
+                  </Link>
                 </div>
               </li>
             ))}
@@ -260,9 +263,8 @@ const Handle = ({
       </div>
 
       <div
-        className={`bg-[#B678FF] fixed duration-300 bottom-0 ${
-          colour[0].purple ? "h-[90%]" : "h-[0%]"
-        }  w-full md:w-4/4 lg:w-3/5 xl:w-2/5`}
+        className={`bg-[#B678FF] fixed duration-300 bottom-0 ${colour[0].purple ? "h-[90%]" : "h-[0%]"
+          }  w-full md:w-4/4 lg:w-3/5 xl:w-2/5`}
         style={{ borderRadius: "15px 15px 0px 0px" }}
         onClick={() => setcategory("Personal")}
       >
@@ -287,7 +289,7 @@ const Handle = ({
                 src={Edit}
                 alt=""
                 className="h-8 cursor-pointer"
-                // onClick={() => setToggle(true)}
+              // onClick={() => setToggle(true)}
               />
             </div>
           </div>
@@ -306,13 +308,14 @@ const Handle = ({
                   />
                 </div>
                 <div className="w-[70%]  text-left flex items-center border-b-[1px] border-white">
-                  <p
-                    className={`text-[18px] font-bold ${
-                      toggleStates[p.id] ? "line-through" : ""
-                    }`}
-                  >
-                    {p.todo}
-                  </p>
+                  <Link to={`/EditModal/${p.id}`}>
+                    <p
+                      className={`text-[18px] font-bold ${toggleStates[p.id] ? "line-through" : ""
+                        }`}
+                    >
+                      {p.todo}
+                    </p>
+                  </Link>
                 </div>
               </li>
             ))}
