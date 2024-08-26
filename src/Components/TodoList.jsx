@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Addicon from "../csv and images/Addicon.svg";
+import addicon from '../csv and images/addicon.svg'
 
 const TodoList = ({ todos }) => {
   
@@ -8,7 +8,7 @@ const TodoList = ({ todos }) => {
   return (
     <>
       <div className="fixed bottom-6 right-6 bg-white rounded-full">
-        <img src={Addicon} className="h-12" />
+        <img src={addicon} className="h-12" />
       </div>
       <div>
         <ul className="flex flex-col mt-5 ">
@@ -37,4 +37,4 @@ const TodoList = ({ todos }) => {
   );
 };
 
-export default TodoList;
+export default TodoList

@@ -15,6 +15,13 @@ const Main = () => {
     dispatch(gettodo());
   }, [dispatch]);
   const { todos } = useSelector((state) => state.app);
+
+  const Inbox = todos.filter((p) => p.category == "Inbox");
+  const Family = todos.filter((p) => p.category == "Family");
+  const Shopping = todos.filter((p) => p.category == "Shopping");
+  const Personal = todos.filter((p) => p.category == "Personal");
+  const Work = todos.filter((p) => p.category == "Work");
+
   const [colour, setColour] = useState([
     { red: false, green: false, yellow: false, purple: false, gray: false },
   ]);
@@ -23,11 +30,24 @@ const Main = () => {
     <div className="w-full md:w-5/5 lg:w-3/5 xl:w-2/5 h-screen">
       <Header category={category} />
       <div className="p-4">
-      <TodoList todos={todos} />
-      <BottomBox colour={colour} setColour={setColour} />
+        <TodoList todos={todos} />
+        <BottomBox
+          colour={colour}
+          setColour={setColour}
+          Inbox={Inbox}
+          Family={Family}
+          Shopping={Shopping}
+          Personal={Personal}
+          Work={Work}
+        />
       </div>
       <Footer />
       <Handle
+        Inbox={Inbox}
+        Family={Family}
+        Shopping={Shopping}
+        Personal={Personal}
+        Work={Work}
         colour={colour}
         setColour={setColour}
         category={category}

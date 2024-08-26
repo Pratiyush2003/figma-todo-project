@@ -22,6 +22,7 @@ const Modal = ({ onClose , category }) => {
         category
       }
       dispatch(createtodo(obj))
+      setTodo("")
   }
 
   const handleClose = () => {

@@ -1,15 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const BottomBox = ({ colour, setColour }) => {
+const BottomBox = ({ colour, setColour , Inbox, Family, Shopping, Personal, Work }) => {
 
   const { todos } = useSelector((state) => state.app);
 
-  const Inbox = todos.filter((p) => p.category == "Inbox");
-  const Family = todos.filter((p) => p.category == "Family");
-  const Shopping = todos.filter((p) => p.category == "Shopping");
-  const Personal = todos.filter((p) => p.category == "Personal");
-  const Work = todos.filter((p) => p.category == "Work");
   
   const colorsList = [
     { name: "gray", bg: "#EBEFF5", textColor: "text-gray-500" , topic : "Inbox", category : Inbox.length },
